@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Battleship — Minimal</title>
+  <link rel="stylesheet" href="/public/styles.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Battleship — Minimal</h1>
+    </header>
+
+    <section id="boards" class="boards">
+      <article class="board-container">
+        <h2>Your Board</h2>
+        <div id="player-board" class="board"></div>
+      </article>
+
+      <article class="board-container">
+        <h2>Enemy Board</h2>
+        <div id="enemy-board" class="board"></div>
+      </article>
+    </section>
+
+    <p id="status" class="status"></p>
+  </main>
+
+  <script type="module">
+    import '../src/index.js';
+  </script>
+</body>
+</html>

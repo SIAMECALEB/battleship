@@ -1,0 +1,106 @@
+/* public/styles.css */
+
+:root {
+  --water: #cde7f0;
+  --ship: #5b8c85;
+  --hit: #e74c3c;
+  --miss: #95a5a6;
+  --text: #2c3e50;
+  --bg: #f5f7fa;
+  --grid-border: #ccc;
+  --cell-size: 40px;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding: 30px;
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+#boards {
+  display: flex;
+  gap: 60px;
+  margin-top: 30px;
+}
+
+.board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board-title {
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+#player-board,
+#enemy-board {
+  display: grid;
+  grid-template-columns: repeat(10, var(--cell-size));
+  grid-template-rows: repeat(10, var(--cell-size));
+  gap: 2px;
+  background: var(--grid-border);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#player-board div,
+#enemy-board div {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background: var(--water);
+  border-radius: 4px;
+  transition: background 0.2s ease, transform 0.1s ease;
+  cursor: pointer;
+}
+
+#player-board div:hover,
+#enemy-board div:hover {
+  transform: scale(1.05);
+}
+
+/* States */
+.cell-ship {
+  background: var(--ship);
+}
+
+.cell-hit {
+  background: var(--hit);
+  color: white;
+}
+
+.cell-miss {
+  background: var(--miss);
+}
+
+button {
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 1rem;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background: #2980b9;
+  transform: scale(1.05);
+}
